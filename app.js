@@ -8,6 +8,8 @@ var cors = require('cors')
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var signUpRouter = require('./routes/signup');
+var contactsRouter = require('./routes/contacts');
+var chatsRouter = require('./routes/chats');
 
 var app = express();
 
@@ -21,5 +23,7 @@ app.use(cors())
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/signup', signUpRouter);
+app.use('/contacts', contactsRouter);
+app.use('/chats', chatsRouter);
 
 module.exports = app;
