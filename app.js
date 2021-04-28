@@ -10,6 +10,7 @@ var usersRouter = require('./routes/users');
 var signUpRouter = require('./routes/signup');
 var contactsRouter = require('./routes/contacts');
 var chatsRouter = require('./routes/chats');
+var userInfoRouter = require('./routes/userInfo');
 
 var app = express();
 
@@ -25,5 +26,6 @@ app.use('/users', usersRouter);
 app.use('/signup', signUpRouter);
 app.use('/contacts', contactsRouter);
 app.use('/chats', chatsRouter);
+app.use('/userinfo', userInfoRouter);
 
 module.exports = app;

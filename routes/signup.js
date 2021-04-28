@@ -4,7 +4,7 @@ var router = express.Router();
 
 var mongo = require('mongodb');
 var MongoClient = require('mongodb').MongoClient;
-var url = "mongodb+srv://TripNav:tripnavigation@Primo.jweu5.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
+var url = "mongodb+srv://ChatHub:TripNavigation@cluster0.msosy.mongodb.net/ChatHub?retryWrites=true&w=majority";
 
 /* GET users listing.*/
 router.get('/:nick/:pass/:quest/:answr', function (req, res){
@@ -14,8 +14,8 @@ router.get('/:nick/:pass/:quest/:answr', function (req, res){
     answr = req.params.answr;
     MongoClient.connect(url, function(err, db) {
         if (err) throw err;
-        var dbo = db.db("TripNav");
-        dbo.collection("users").find({"nickname":nick}).toArray(function(err, results) {
+        var dbo = db.db("ChatHub");
+        dbo.collection("Users").find({"nickname":nick}).toArray(function(err, results) {
             if (err) throw err;
             this.result = results;
           if (result.length === 0)
