@@ -21,7 +21,7 @@ router.get('/:nick/:pass/:quest/:answr', function (req, res){
           if (result.length === 0)
           {
             var myobj = { "nickname": nick , "password":pass , "question":quest , "answer":answr};
-            dbo.collection("users").insertOne(myobj, function(err, res) {
+            dbo.collection("Users").insertOne(myobj, function(err, res) {
             if (err) throw err;
             this.result = results;
             result = "user added";
